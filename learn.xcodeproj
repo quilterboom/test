@@ -1,0 +1,19 @@
+#import <Foundation/Foundation.h>
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        NSMutableString *mutablestr1=[[NSMutableString alloc]initWithString:@"0123456789"];
+        
+        
+        for (int i=mutablestr1.length-1; i>=0; i--) {
+            unichar c=[mutablestr1 characterAtIndex:i];//取出mutablestr1中指定位置上的值
+            NSLog(@"%c",c);
+            [mutablestr1 appendFormat:@"%c",c];//将取出来的值加在mutablestr1后面
+        }
+       
+        [mutablestr1 deleteCharactersInRange:NSMakeRange(0, 10)];//删除0-10上的值
+        NSLog(@"%@",mutablestr1);
+        
+    }
+    return 0;
+}
